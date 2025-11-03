@@ -1,0 +1,28 @@
+---
+sidebar_position: 1
+---
+
+# Considerations
+
+:::tip[Note]
+
+This below considerations are for D.O.T teams who wants to use the D.O.T's own hosted deployment
+
+:::
+
+## Below are some points to keep in consideration before using the platform
+
+- Take all the AWS resources access to your service IAM role
+    - Engine MSK access
+        - Non-Prod: `orchest-non-prod`
+        - Prod: `Orchest-prod`
+    - Engine KMS access (For encryption and decryption)
+        - Non-Prod: `arn:aws:kms:eu-central-1:274765082782:key/78dfe576-b7d9-4e53-8d8e-d3ac07611bae`
+        - Prod: `arn:aws:kms:eu-central-1:616018632173:key/480b936b-3d0e-4670-8331-c425906dc4fb`
+
+### Important Points:
+- You have to deploy your service first to deploy BPMN chart on Cluster, else chart deployment fails.
+- If any worker is not present in the service, and it is in BPMN, you cannot deploy the chart.
+
+
+{/* ## There are certain components that are not yet supported, Please refer to the Components page */}
